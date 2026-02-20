@@ -17,13 +17,15 @@ export const Portfolio: React.FC = () => {
           </button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Updated Grid to display 3 columns on large screens */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {PORTFOLIO_IMAGES.map((item, idx) => (
-            <div key={idx} className="group relative overflow-hidden rounded-2xl shadow-md aspect-[4/3] cursor-pointer">
+            <div key={idx} className="group relative overflow-hidden rounded-2xl shadow-md aspect-[4/3] cursor-pointer bg-slate-200">
               <img 
                 src={item.url} 
                 alt={item.title} 
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
                 <span className="text-blue-400 font-bold text-xs uppercase tracking-wider mb-1">{item.category}</span>

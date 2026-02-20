@@ -3,7 +3,9 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { BentoGrid } from './components/BentoGrid';
 import { Services } from './components/Services';
+import { Process } from './components/Process';
 import { Portfolio } from './components/Portfolio';
+import { FAQ } from './components/FAQ';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 
@@ -18,7 +20,9 @@ function App() {
           <BentoGrid />
         </div>
         <Services />
+        <Process />
         <Portfolio />
+        <FAQ />
         <Contact />
       </main>
       <Footer />

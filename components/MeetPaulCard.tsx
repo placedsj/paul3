@@ -9,8 +9,8 @@ export const MeetPaulCard: React.FC = () => {
       </div>
       <div className="flex flex-col sm:flex-row gap-4 items-center sm:items-start relative z-10">
         <img 
-          src="https://picsum.photos/id/1005/150/150" 
-          alt="Paul" 
+          src="https://i.ibb.co/9kKZMdqw/IMG-6812.jpg" 
+          alt="Paul's Roofing" 
           className="w-24 h-24 rounded-full object-cover border-4 border-slate-50 shadow-sm shrink-0"
         />
         <div className="text-center sm:text-left">
