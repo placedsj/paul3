@@ -21,9 +21,9 @@ export const MeetPaulCard: React.FC = () => {
           </p>
         </div>
       </div>
-      <button className="mt-2 w-full bg-slate-900 hover:bg-slate-800 text-white font-medium py-2.5 rounded-lg transition-colors relative z-10">
+      <a href="#contact" className="mt-2 w-full block text-center bg-slate-900 hover:bg-slate-800 text-white font-medium py-2.5 rounded-lg transition-colors relative z-10">
         Schedule a Consultation
-      </button>
+      </a>
     </div>
   );
 };

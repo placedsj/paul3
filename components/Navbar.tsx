@@ -37,9 +37,9 @@ export const Navbar: React.FC = () => {
                 </div>
                 <span className="font-bold tracking-wide">(506) 271-4162</span>
              </a>
-             <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg font-medium transition-colors shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+             <a href="#contact" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg font-medium transition-colors shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
                Get a Quote
-             </button>
+             </a>
           </div>
 
           <div className="-mr-2 flex md:hidden">
@@ -60,6 +60,7 @@ export const Navbar: React.FC = () => {
               <a
                 key={link.label}
                 href={link.href}
+                onClick={() => setIsOpen(false)}
                 className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
               >
                 {link.label}
@@ -68,9 +69,9 @@ export const Navbar: React.FC = () => {
              <a href="tel:5062714162" className="block text-center w-full mt-4 bg-gray-800 text-white px-6 py-3 rounded-lg font-bold mb-2">
                Call (506) 271-4162
              </a>
-             <button className="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-bold">
+             <a href="#contact" className="w-full block text-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-bold">
                Get a Quote
-             </button>
+             </a>
           </div>
         </div>
       )}

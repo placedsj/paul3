@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
@@ -13,9 +13,9 @@ export const Footer: React.FC = () => {
               Providing top-quality metal roofing solutions to Southern New Brunswick for over 35 years. #BetterCallPaul
             </p>
             <div className="flex gap-4 text-sm font-medium">
-                <a href="#" className="hover:text-white transition-colors">Services</a>
-                <a href="#" className="hover:text-white transition-colors">Portfolio</a>
-                <a href="#" className="hover:text-white transition-colors">Contact</a>
+                <a href="#services" className="hover:text-white transition-colors">Services</a>
+                <a href="#portfolio" className="hover:text-white transition-colors">Portfolio</a>
+                <a href="#contact" className="hover:text-white transition-colors">Contact</a>
             </div>
           </div>
 
@@ -26,6 +26,12 @@ export const Footer: React.FC = () => {
                  <a href="tel:5062714162" className="flex items-center gap-3 hover:text-white transition-colors">
                    <Phone className="w-5 h-5 text-blue-500" />
                    <span>(506) 271-4162</span>
+                 </a>
+               </li>
+               <li>
+                 <a href="mailto:paulsroofing@outlook.com" className="flex items-center gap-3 hover:text-white transition-colors">
+                   <Mail className="w-5 h-5 text-blue-500" />
+                   <span>paulsroofing@outlook.com</span>
                  </a>
                </li>
                <li className="flex items-center gap-3">
@@ -43,7 +49,7 @@ export const Footer: React.FC = () => {
         </div>
         
         <div className="mt-12 pt-8 border-t border-slate-800 text-center text-xs opacity-50">
-          &copy; 2024 Paul's Roofing. All rights reserved.
+          &copy; {new Date().getFullYear()} Paul's Roofing. All rights reserved.
         </div>
       </div>
     </footer>

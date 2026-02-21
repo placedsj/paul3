@@ -39,9 +39,9 @@ export const Hero: React.FC = () => {
                 <Phone className="w-5 h-5 fill-current" />
                 Call (506) 271-4162
              </a>
-             <button className="bg-white/5 backdrop-blur-md text-white px-8 py-4 rounded-lg font-bold hover:bg-white/10 transition-colors border border-white/20">
+             <a href="#contact" className="bg-white/5 backdrop-blur-md text-white px-8 py-4 rounded-lg font-bold hover:bg-white/10 transition-colors border border-white/20">
                 Free Estimate
-             </button>
+             </a>
           </div>
         </div>
       </div>
