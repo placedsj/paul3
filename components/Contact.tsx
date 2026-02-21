@@ -1,7 +1,14 @@
-import React from 'react';
-import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import React, { useState } from 'react';
+import { Phone, Mail, MapPin, Clock, CheckCircle2 } from 'lucide-react';
 
 export const Contact: React.FC = () => {
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
   return (
     <section id="contact" className="py-20 bg-white relative overflow-hidden">
       {/* Decorative bg element */}
@@ -30,6 +37,17 @@ export const Contact: React.FC = () => {
               </div>
 
               <div className="flex items-start gap-4">
+                <div className="bg-blue-100 p-3 rounded-lg text-blue-600">
+                  <Mail className="w-6 h-6" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-slate-900">Email</h4>
+                  <p className="text-slate-600 mb-1">We'll reply within one business day</p>
+                  <a href="mailto:paulsroofing@outlook.com" className="text-xl font-bold text-blue-600 hover:text-blue-700">paulsroofing@outlook.com</a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
                  <div className="bg-slate-100 p-3 rounded-lg text-slate-600">
                   <MapPin className="w-6 h-6" />
                 </div>
@@ -54,43 +72,62 @@ export const Contact: React.FC = () => {
 
           <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100 shadow-lg">
             <h4 className="text-2xl font-bold text-slate-900 mb-6">Request a Quote</h4>
-            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-1">First Name</label>
-                  <input type="text" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all" placeholder="John" />
+            {submitted ? (
+              <div className="flex flex-col items-center justify-center text-center py-12 gap-4">
+                <CheckCircle2 className="w-16 h-16 text-green-500" />
+                <h5 className="text-2xl font-bold text-slate-900">Request Sent!</h5>
+                <p className="text-slate-600">Thanks for reaching out. We'll be in touch within one business day to discuss your project.</p>
+                <button
+                  onClick={() => setSubmitted(false)}
+                  className="mt-4 text-blue-600 hover:text-blue-800 font-semibold underline text-sm"
+                >
+                  Submit another request
+                </button>
+              </div>
+            ) : (
+              <form className="space-y-4" onSubmit={handleSubmit}>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-1">First Name</label>
+                    <input type="text" required aria-required="true" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all" placeholder="John" />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-1">Last Name</label>
+                    <input type="text" required aria-required="true" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all" placeholder="Doe" />
+                  </div>
                 </div>
+                
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-1">Last Name</label>
-                  <input type="text" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all" placeholder="Doe" />
+                  <label className="block text-sm font-medium text-slate-700 mb-1">Phone Number</label>
+                  <input type="tel" required aria-required="true" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all" placeholder="(506) 555-0123" />
                 </div>
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium text-slate-700 mb-1">Phone Number</label>
-                <input type="tel" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all" placeholder="(506) 555-0123" />
-              </div>
 
-              <div>
-                <label className="block text-sm font-medium text-slate-700 mb-1">Service Needed</label>
-                <select className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all bg-white">
-                  <option>Metal Roofing</option>
-                  <option>Siding Installation</option>
-                  <option>Gutter Guards / Cleaning</option>
-                  <option>Repair / Maintenance</option>
-                  <option>Other</option>
-                </select>
-              </div>
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                  <input type="email" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all" placeholder="john@example.com" />
+                </div>
 
-              <div>
-                <label className="block text-sm font-medium text-slate-700 mb-1">Message</label>
-                <textarea rows={4} className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all" placeholder="Tell us about your project..."></textarea>
-              </div>
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-1">Service Needed</label>
+                  <select className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all bg-white">
+                    <option>Metal Roofing</option>
+                    <option>Siding Installation</option>
+                    <option>Gutter Guards / Cleaning</option>
+                    <option>Repair / Maintenance</option>
+                    <option>Other</option>
+                  </select>
+                </div>
 
-              <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5">
-                Send Request
-              </button>
-            </form>
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-1">Message</label>
+                  <textarea rows={4} className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all" placeholder="Tell us about your project..."></textarea>
+                </div>
+
+                <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5">
+                  Send Request
+                </button>
+              </form>
+            )}
           </div>
 
         </div>

@@ -39,6 +39,7 @@ export const NAV_LINKS = [
   { label: 'Services', href: '#services' },
   { label: 'Process', href: '#process' },
   { label: 'Portfolio', href: '#portfolio' },
+  { label: 'FAQ', href: '#faq' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -168,5 +169,21 @@ export const FAQS = [
   {
     question: "Is it more expensive?",
     answer: "The upfront cost is higher, but the long-term value is superior due to longevity, lower maintenance, and energy savings."
+  },
+  {
+    question: "Can a metal roof be installed over my existing shingles?",
+    answer: "In many cases, yes. A metal roof can be installed over existing shingles, saving on tear-off costs. We'll assess your current roof during our consultation to determine the best approach."
+  },
+  {
+    question: "Do you offer a warranty?",
+    answer: "Yes. We stand behind our work with a workmanship warranty, and the materials we use come with manufacturer warranties covering paint, rust, and structural integrity for 40+ years."
+  },
+  {
+    question: "How long does installation take?",
+    answer: "Most residential projects are completed in 1–3 days depending on the size and complexity of the roof. We work efficiently and minimize disruption to your daily routine."
+  },
+  {
+    question: "Do you serve my area?",
+    answer: "We serve all of Southern New Brunswick including Damascus, Hampton, Sussex, Saint John, Quispamsis, Rothesay, and surrounding areas. Give us a call to confirm your location."
   }
 ];
